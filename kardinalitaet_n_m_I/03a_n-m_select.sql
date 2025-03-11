@@ -35,8 +35,8 @@ FROM design.purchases
 INNER JOIN design.servants ON design.servants.id = design.purchases.servants_id
 INNER JOIN design.products ON design.products.id = design.purchases.products_id
 GROUP BY servant_name -- organisch / aggregiert
--- WHERE servant_name = "Hasan"
-HAVING servant_name LIKE "%ij"
+HAVING servant_name = "Hasan"
+-- HAVING servant_name LIKE "%ij"
 ;
 
 # Wieviel Geld hat jeder Diener ausgegeben?
@@ -47,7 +47,8 @@ SELECT
 FROM design.purchases
 INNER JOIN design.servants ON design.servants.id = design.purchases.servants_id
 INNER JOIN design.products ON design.products.id = design.purchases.products_id
--- WHERE servant_name = "TBA"
+-- WHERE servant_name = "Hasan"
+WHERE servant_name = "Dimitrij"
 GROUP BY servant_name
 ;
 
@@ -61,8 +62,8 @@ SELECT
 FROM design.purchases
 INNER JOIN design.servants ON design.servants.id = design.purchases.servants_id
 INNER JOIN design.products ON design.products.id = design.purchases.products_id
-WHERE product_name LIKE "%Lachs%" OR product_name LIKE "%Sauce%" -- IN() ??
--- WHERE product_name LIKE "%Huhn%"
+-- WHERE product_name LIKE "%Lachs%" OR product_name LIKE "%Sauce%" -- IN() ??
+WHERE product_name LIKE "%Huhn%"
 ;
 
 # Wie oft wurde das Produkt X gekauft?
