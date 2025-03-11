@@ -1,3 +1,4 @@
+\! cls
 
 -- Vorbereitung
 USE design;
@@ -114,6 +115,3 @@ INSERT INTO purchases (servants_id, products_id) VALUES (2, 3);
 INSERT INTO purchases (servants_id, products_id) VALUES (2, 4);
 INSERT INTO purchases (servants_id, products_id) VALUES (3, 4);
 
-
--- Purchases: Inhalte 
-SELECT * FROM design.purchases;

@@ -1,15 +1,17 @@
--- 3b SELECTS 1:1 / n:m
+\! cls
 
--- 1. JOIN 
-SELECT
-	*
-FROM design.purchases
-INNER JOIN design.servants ON design.servants.id = design.purchases.servants_id
-INNER JOIN design.products ON design.products.id = design.purchases.products_id
-INNER JOIN design.cats ON design.cats.id = design.servants.cats_id
-;
+# 3b SELECTS 1:1 / n:m
 
--- 2. Wer bekommt den Lachs? 
+# 1. JOIN 
+-- SELECT
+-- 	*
+-- FROM design.purchases
+-- INNER JOIN design.servants ON design.servants.id = design.purchases.servants_id
+-- INNER JOIN design.products ON design.products.id = design.purchases.products_id
+-- INNER JOIN design.cats ON design.cats.id = design.servants.cats_id
+-- ;
+
+# 2. Wer bekommt den Lachs? 
 SELECT
 	cat_name AS Herrschaft,
     servant_name AS Diener,
@@ -39,7 +41,7 @@ INNER JOIN design.cats ON design.cats.id = design.servants.cats_id
 WHERE product_name LIKE "%Lachs%" -- irgendwas mit Lachs...
 ;
 
--- 2b. Variante mit einer VIEW
+# 2b. Variante mit einer VIEW
 DROP VIEW IF EXISTS design.who_purchased_salmon;
 CREATE VIEW  design.who_purchased_salmon AS
 	SELECT
